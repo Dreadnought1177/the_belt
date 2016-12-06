@@ -1,0 +1,24 @@
+<div ng-controller="messageController as meep">
+    <a style="align-items: top;" href="#/home">Home</a>|<a>Answer this Question</a><a style="padding-left: 70%" href="#/">Logout</a></div>
+<h1>Welcome {{meep.user.first}}</h1>
+<h2>{{meep.topic[0].topic}}</h2>
+<h4>{{meep.topic[0].description}}</h4>
+
+
+<form>
+    POST YOU ANSWER HERE<br>
+    Your answer:<br><textarea ng-model="meep.newMessage.message">THIS IS WHERE YOU POST YOU ANSWER</textarea> <br>
+    Supporting Details:<br><textarea ng-model="meep.newMessage.detail">THIS IS WHERE YOU POST YOU ANSWER</textarea> <br>
+    <input class="btn btn-info" type="submit" value="POST" ng-click='meep.addmessage(meep.newMessage)'><a class="btn btn-info" type="submit" href="#/home">Cancel</a> <br>
+
+</form>
+
+
+
+
+
+
+
+
+
+</div>

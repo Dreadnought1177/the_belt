@@ -1,0 +1,40 @@
+<div ng-controller="topicController as meep">
+
+    <div><h1>Hi {{meep.user.first}}!</h1><a style="padding-left: 80%;, align-items: top;" href=#/user_page/{{meep.topics._user._id}}">Create a New Post</a>/<a href="#/">Logout</a></div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <td>Name</td>
+            <td>Question</td>
+            <td>Answers</td>
+            <td>Date Posted</td>
+            <td>Action</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="x in meep.topics">
+            <td>{{x._user.first}}</td>
+            <td><a>{{x.topic}}</a></td>
+            <td>{{x._messages.length}}</td>
+            <!--<td><a ng-click= 'meep.go_to_topic(x.topic)'>{{x.topic}}</a></td>-->
+            <td>{{ x.createdAt | date:'M/d/yyyy' }} </td>
+            <td><a href="#/topic_page/{{x._id}}">Show</a>  <a href="#/answer_page/{{x._id}}">Answer</a></td>
+
+        </tr>
+        </tbody>
+    </table>
+
+    <!--<h1>ADD A NEW TOPIC</h1>-->
+    <!--<form>-->
+        <!--Topic: <textarea ng-model="meep.newTopic.topic">THIS IS WHERE YOU INPUT A Topic</textarea><br>-->
+        <!--Description: <textarea ng-model="meep.newTopic.description">THIS IS WHERE YOU TALK ABOUT A TOPIC</textarea><br>-->
+        <!--Category: <select ng-model ='meep.newTopic.category'>-->
+        <!--<option>html</option>-->
+        <!--<option>python</option>-->
+        <!--<option>javascript</option></select> <br>-->
+        <!--<input type="submit" value="Submit" ng-click='meep.addTopic(meep.newTopic)'> <br>-->
+    <!--</form>-->
+
+<!--</div>-->
+

@@ -1,0 +1,61 @@
+<div ng-controller="messageController as meep">
+    <a style="align-items: top;" href="#/home">Home</a>|<a href="#/answer_page/{{meep.topic[0]._id}}">Answer this Question</a><a style="padding-left: 70%" href="#/">Logout</a></div>
+
+    <h2>{{meep.topic[0].topic}}</h2>
+    <h4>{{meep.topic[0].description}}</h4>
+
+
+<div ng-repeat="x in meep.topic">
+    <div ng-repeat="m in x._messages" style="outline: 1px dotted red; padding: 20px">
+        <h1>{{m._user.first}}:</h1>
+        <p style="color: green">{{m.message}}</p>
+        <p style="color: green">{{m.detail}}</p>
+        <p>{{m.count_one}} <button ng-click ='meep.update_count("count_one", m._id)'>Like!</button></p>
+    </div>
+
+
+</div>
+
+<!--<div ng-controller="messageController as meep">-->
+
+    <!--<h3>Welcome {{meep.user.first}}</h3>-->
+    <!--<h4>{{meep.topic[0].topic}}</h4>-->
+
+
+
+    <!--<table class="table">-->
+        <!--<thead>-->
+        <!--<tr>-->
+            <!--<td>Option</td>-->
+            <!--<td>Current Count of Votes</td>-->
+            <!--<td>Action</td>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+        <!--<tr>-->
+            <!--<td>{{meep.topic[0].option_one}}</td>-->
+            <!--<td ng-model = "meep.updateCount.count_one">{{meep.topic[0].count_one}}</td>-->
+            <!--<td><button ng-click ='meep.update_count("count_one")'>Vote</button></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td>{{meep.topic[0].option_two}}</td>-->
+            <!--<td>{{meep.topic[0].count_two}}</td>-->
+            <!--<td><button ng-click ='meep.update_count("count_two")'>Vote</button></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td>{{meep.topic[0].option_three}}</td>-->
+            <!--<td>{{meep.topic[0].count_three}}</td>-->
+            <!--<td><button ng-click ='meep.update_count("count_three")'>Vote</button></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td>{{meep.topic[0].option_four}}</td>-->
+            <!--<td>{{meep.topic[0].count_four}}</td>-->
+            <!--<td><button ng-click ='meep.update_count("count_four")'>Vote</button></td>-->
+        <!--</tr>-->
+        <!--</tbody>-->
+    <!--</table>-->
+
+
+
+<!--</div>-->
+

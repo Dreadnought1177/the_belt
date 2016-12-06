@@ -1,0 +1,13 @@
+<div ng-controller="topicController as meep">
+
+    <div><h1>Welcome {{meep.user.first}}</h1><a style="padding-left: 80%;, align-items: top;" href="#/home">Home</a>/<a href="#/">Logout</a></div>
+
+
+    <h1>New Question</h1>
+    <div ng-controller="topicController as meep">
+        <form >
+            Question:<br> <textarea style="width: 50%;" ng-model="meep.newTopic.topic">THIS IS WHERE YOU INPUT A Topic</textarea><br>
+            Description:<br> <textarea ng-model="meep.newTopic.description">THIS IS WHERE YOU INPUT A Topic</textarea><br>
+            <input class="btn btn-info" type="submit" value="Submit" ng-click='meep.addTopic(meep.newTopic)'><a class="btn btn-info" type="submit" href="#/home">Cancel</a> <br>
+        </form>
+    </div>
